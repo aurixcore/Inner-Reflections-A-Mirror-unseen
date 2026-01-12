@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A private digital journal for deep self-reflection and emotional awareness. Inner Reflections invites you to explore your inner world through gentle prompts and guided moments of stillness. This is a safe space to observe your emotions, recognize patterns, and reconnect with yourself—quietly, honestly, and without judgment.">
+  
+  <title>Inner Reflections – A Mirror Unseen</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Inner Reflections</h1>
+    <p><em>A Mirror Unseen</em></p>
+  </header>
+
+  <main>
+    <section aria-labelledby="journal-heading">
+      <h2 id="journal-heading">Journal Entry</h2>
+      <p>
+        A private digital journal for deep self-reflection and emotional awareness.  
+        Inner Reflections invites you to explore your inner world through gentle prompts
+        and guided moments of stillness. This is a safe space to observe your emotions,
+        recognize patterns, and reconnect with yourself—quietly, honestly, and without judgment.
+      </p>
+
+      <button
+        id="open-reflection"
+        type="button"
+        aria-haspopup="dialog"
+        aria-controls="reflection-dialog"
+        aria-label="Open Reflection Dialog">
+        Open Reflection
+      </button>
+    </section>
+  </main>
+
+  <dialog id="reflection-dialog" aria-label="Reflection dialog">
+    <form method="dialog">
+      <h3>Take a deep breath</h3>
+      <textarea
+        id="reflection-text"
+        rows="10"
+        placeholder="Write without judgment..."></textarea>
+      <menu>
+        <button id="save-btn" type="button">Save</button>
+        <button id="close-btn" type="button">Close</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
