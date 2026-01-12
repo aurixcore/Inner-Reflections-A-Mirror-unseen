@@ -1,8 +1,8 @@
 /* Body & fonts */
 body {
-  font-family: 'Bellota', serif; /* easy to read for body */
-  background: linear-gradient(135deg, #1A1F3D, #5F4B8B); /* midnight blue to cosmic purple */
-  color: #F6F3EE; /* stardust white */
+  font-family: 'Bellota', serif;
+  background: linear-gradient(135deg, #1A1F3D, #5F4B8B);
+  color: #F6F3EE;
   margin: 0;
   padding: 0;
   line-height: 1.7;
@@ -10,7 +10,8 @@ body {
 
 /* Headers */
 h1, h2, h3 {
-  font-family: 'Cormorant Garamond', serif; /* elegant headers */
+  font-family: 'Cormorant Garamond', serif;
+  text-align: center;
 }
 
 /* Navigation menu */
@@ -20,12 +21,12 @@ h1, h2, h3 {
   justify-content: center;
   gap: 10px;
   padding: 20px;
-  background: #1A1F3D; /* deep midnight blue */
+  background: #1A1F3D;
 }
 
 .main-menu a {
   padding: 8px 14px;
-  background: #5F4B8B; /* cosmic purple */
+  background: #5F4B8B;
   color: #F6F3EE;
   text-decoration: none;
   border-radius: 6px;
@@ -33,10 +34,10 @@ h1, h2, h3 {
 }
 
 .main-menu a:hover {
-  background: #A6C8FF; /* sky blue highlight */
+  background: #A6C8FF;
 }
 
-/* Buttons (journal dialog) */
+/* Buttons */
 button {
   background: #6b705c;
   color: #fff;
@@ -67,6 +68,6 @@ dialog {
   width: 90%;
   padding: 1rem;
   border-radius: 8px;
-  background: #2c2a4a; /* dark mystical background */
+  background: #2c2a4a;
   color: #f6f3ee;
 }
