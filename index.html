@@ -4,38 +4,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A private digital journal for deep self-reflection and emotional awareness. Inner Reflections invites you to explore your inner world through gentle prompts and guided moments of stillness. This is a safe space to observe your emotions, recognize patterns, and reconnect with yourself—quietly, honestly, and without judgment.">
-  
+
   <title>Inner Reflections – A Mirror Unseen</title>
 
+  <!-- Link to styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!-- HEADER -->
   <header>
     <h1>Inner Reflections</h1>
     <p><em>A Mirror Unseen</em></p>
   </header>
-  
-<nav class="main-menu">
-  <a href="index.html">Home</a>
-  <a href="journal.html">Daily Journal</a>
-  <a href="prompts.html">Guided Prompts</a>
-  <a href="inspiration.html">Tips & Inspiration</a>
-  <a href="relax.html">Breath & Relaxation</a>
-  <a href="game.html">Calm Mini‑Game</a>
-  <a href="entries.html">My Entries</a>
-</nav>
 
+  <!-- NAVIGATION MENU -->
+  <nav class="main-menu">
+    <a href="index.html">Home</a>
+    <a href="journal.html">Daily Journal</a>
+    <a href="prompts.html">Guided Prompts</a>
+    <a href="inspiration.html">Tips & Inspiration</a>
+    <a href="relax.html">Breath & Relaxation</a>
+    <a href="game.html">Calm Mini‑Game</a>
+    <a href="entries.html">My Entries</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
   <main>
-    <section aria-labelledby="journal-heading">
-      <h2 id="journal-heading">Journal Entry</h2>
+    <section aria-labelledby="intro-heading">
+      <h2 id="intro-heading">Welcome to Inner Reflections</h2>
       <p>
-        A private digital journal for deep self-reflection and emotional awareness.  
-        Inner Reflections invites you to explore your inner world through gentle prompts
-        and guided moments of stillness. This is a safe space to observe your emotions,
-        recognize patterns, and reconnect with yourself—quietly, honestly, and without judgment.
+        Explore your inner world through daily reflection, gentle prompts, and mindful exercises. 
+        Use this space to observe your emotions, recognize patterns, and reconnect with yourself — quietly, honestly, and without judgment.
       </p>
+    </section>
 
+    <section aria-labelledby="journal-heading">
+      <h2 id="journal-heading">Daily Journal</h2>
+      <p>
+        Your private space to write, reflect, and explore your emotions. Click below to begin your daily entry.
+      </p>
       <button
         id="open-reflection"
         type="button"
@@ -45,8 +53,20 @@
         Open Reflection
       </button>
     </section>
+
+    <section aria-labelledby="placeholders-heading">
+      <h2 id="placeholders-heading">Coming Soon</h2>
+      <ul>
+        <li>Guided Prompts — exercises for self-awareness</li>
+        <li>Tips & Inspiration — daily quotes and insights</li>
+        <li>Breath & Relaxation — short exercises to calm the mind</li>
+        <li>Calm Mini‑Game — a short game to reset your focus</li>
+        <li>My Entries — review your past reflections</li>
+      </ul>
+    </section>
   </main>
 
+  <!-- JOURNAL DIALOG -->
   <dialog id="reflection-dialog" aria-label="Reflection dialog">
     <form method="dialog">
       <h3>Take a deep breath</h3>
@@ -61,6 +81,7 @@
     </form>
   </dialog>
 
+  <!-- SCRIPT -->
   <script src="script.js" defer></script>
 </body>
 </html>
