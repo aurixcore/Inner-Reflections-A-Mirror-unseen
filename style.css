@@ -1,20 +1,27 @@
-/* Body & fonts */
+/* =========================
+   BODY & FONTS
+   ========================= */
 body {
   font-family: 'Bellota', serif;
-  background: linear-gradient(135deg, #1A1F3D, #5F4B8B);
+  background: linear-gradient(135deg, #1A1F3D, #5F4B8B); /* dark mystical gradient */
   color: #F6F3EE;
   margin: 0;
   padding: 0;
   line-height: 1.7;
 }
 
-/* Headers */
+/* =========================
+   HEADERS
+   ========================= */
 h1, h2, h3 {
   font-family: 'Cormorant Garamond', serif;
   text-align: center;
+  margin-bottom: 0.6rem;
 }
 
-/* Navigation menu */
+/* =========================
+   NAVIGATION MENU
+   ========================= */
 .main-menu {
   display: flex;
   flex-wrap: wrap;
@@ -22,6 +29,7 @@ h1, h2, h3 {
   gap: 10px;
   padding: 20px;
   background: #1A1F3D;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .main-menu a {
@@ -31,13 +39,17 @@ h1, h2, h3 {
   text-decoration: none;
   border-radius: 6px;
   font-family: 'Cormorant Garamond', serif;
+  transition: 0.3s;
 }
 
 .main-menu a:hover {
   background: #A6C8FF;
+  color: #1A1F3D;
 }
 
-/* Buttons */
+/* =========================
+   BUTTONS
+   ========================= */
 button {
   background: #6b705c;
   color: #fff;
@@ -45,13 +57,21 @@ button {
   padding: 0.6rem 1rem;
   border-radius: 6px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #a3c4bc;
+  color: #1A1F3D;
 }
 
 button:focus {
   outline: 3px solid #f0e68c;
 }
 
-/* Textarea */
+/* =========================
+   TEXTAREAS
+   ========================= */
 textarea {
   width: 100%;
   font-family: 'Bellota', serif;
@@ -60,9 +80,12 @@ textarea {
   border: 1px solid #ccc;
   background: #fef8d8;
   color: #222;
+  resize: vertical;
 }
 
-/* Dialog */
+/* =========================
+   DIALOGS
+   ========================= */
 dialog {
   max-width: 40rem;
   width: 90%;
@@ -70,4 +93,64 @@ dialog {
   border-radius: 8px;
   background: #2c2a4a;
   color: #f6f3ee;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+/* =========================
+   SECTIONS / JOURNAL CARDS
+   ========================= */
+section {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 700px;
+  background-color: rgba(255,255,255,0.05); /* slightly transparent to show gradient */
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
+}
+
+/* =========================
+   QUOTES & PROMPTS
+   ========================= */
+blockquote {
+  font-style: italic;
+  border-left: 4px solid #A6C8FF;
+  padding-left: 12px;
+  margin: 1rem 0;
+  color: #f6f3ee;
+}
+
+/* =========================
+   MINI INTERACTIONS / HOVER EFFECTS
+   ========================= */
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   LINKS INSIDE CONTENT
+   ========================= */
+a {
+  color: #A6C8FF;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #fff;
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+   ========================= */
+@media (max-width: 768px) {
+  section {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .main-menu {
+    flex-direction: column;
+  }
 }
