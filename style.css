@@ -1,0 +1,45 @@
+/* Global styles */
+body {
+  font-family: Georgia, serif;
+  background: #FEF8D8;
+  color: #222;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.7;
+}
+
+header, main {
+  max-width: 54rem;
+  margin: 0 auto;
+}
+
+/* Buttons */
+button {
+  background: #6b705c;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 3px solid #f0e68c;
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  font-family: Georgia, serif;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Dialog */
+dialog {
+  max-width: 40rem;
+  width: 90%;
+  padding: 1rem;
+  border-radius: 8px;
+}
