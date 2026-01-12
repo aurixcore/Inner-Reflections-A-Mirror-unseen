@@ -1,19 +1,42 @@
-/* Global styles */
+/* Body & fonts */
 body {
-  font-family: Georgia, serif;
-  background: #FEF8D8;
-  color: #222;
+  font-family: 'Bellota', serif; /* easy to read for body */
+  background: linear-gradient(135deg, #1A1F3D, #5F4B8B); /* midnight blue to cosmic purple */
+  color: #F6F3EE; /* stardust white */
   margin: 0;
-  padding: 20px;
+  padding: 0;
   line-height: 1.7;
 }
 
-header, main {
-  max-width: 54rem;
-  margin: 0 auto;
+/* Headers */
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif; /* elegant headers */
 }
 
-/* Buttons */
+/* Navigation menu */
+.main-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background: #1A1F3D; /* deep midnight blue */
+}
+
+.main-menu a {
+  padding: 8px 14px;
+  background: #5F4B8B; /* cosmic purple */
+  color: #F6F3EE;
+  text-decoration: none;
+  border-radius: 6px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.main-menu a:hover {
+  background: #A6C8FF; /* sky blue highlight */
+}
+
+/* Buttons (journal dialog) */
 button {
   background: #6b705c;
   color: #fff;
@@ -30,10 +53,12 @@ button:focus {
 /* Textarea */
 textarea {
   width: 100%;
-  font-family: Georgia, serif;
+  font-family: 'Bellota', serif;
   padding: 0.6rem;
   border-radius: 6px;
   border: 1px solid #ccc;
+  background: #fef8d8;
+  color: #222;
 }
 
 /* Dialog */
@@ -42,4 +67,6 @@ dialog {
   width: 90%;
   padding: 1rem;
   border-radius: 8px;
+  background: #2c2a4a; /* dark mystical background */
+  color: #f6f3ee;
 }
