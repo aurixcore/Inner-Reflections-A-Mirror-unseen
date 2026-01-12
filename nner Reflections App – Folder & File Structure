@@ -1,0 +1,13 @@
+inner-reflections/         <-- Root folder of your app
+│
+├─ index.html             <-- Home page with overview & main menu
+├─ journal.html           <-- Daily Journal page (dialog to write entries)
+├─ prompts.html           <-- Guided prompts page (text or inspiration)
+├─ inspiration.html       <-- Tips & Inspiration page (quotes, book excerpts)
+├─ relax.html             <-- Breath & relaxation exercises
+├─ game.html              <-- Mini-game page (canvas + stars)
+├─ entries.html           <-- Page to review saved journal entries
+│
+├─ style.css              <-- Styling for all pages (colors, fonts, buttons, layout)
+├─ script.js              <-- JS for journal, menu highlight, mini-game
+└─ README.md              <-- Optional, info about your project
