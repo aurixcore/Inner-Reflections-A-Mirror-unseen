@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Daily Journal for Inner Reflections — a private space to reflect and write.">
+
+  <title>Inner Reflections – Daily Journal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Inner Reflections</h1>
+    <p><em>Daily Journal</em></p>
+  </header>
+
+  <nav class="main-menu">
+    <a href="index.html">Home</a>
+    <a href="journal.html">Daily Journal</a>
+    <a href="prompts.html">Guided Prompts</a>
+    <a href="inspiration.html">Tips & Inspiration</a>
+    <a href="relax.html">Breath & Relaxation</a>
+    <a href="game.html">Calm Mini‑Game</a>
+    <a href="entries.html">My Entries</a>
+  </nav>
+
+  <main>
+    <section aria-labelledby="journal-heading">
+      <h2 id="journal-heading">Your Daily Entry</h2>
+      <p>
+        This is your private space to write, reflect, and explore your emotions.
+        Click below to open your journal and begin writing.
+      </p>
+      <button
+        id="open-reflection"
+        type="button"
+        aria-haspopup="dialog"
+        aria-controls="reflection-dialog"
+        aria-label="Open Reflection Dialog">
+        Open Reflection
+      </button>
+    </section>
+  </main>
+
+  <dialog id="reflection-dialog" aria-label="Reflection dialog">
+    <form method="dialog">
+      <h3>Take a deep breath</h3>
+      <textarea id="reflection-text" rows="10" placeholder="Write without judgment..."></textarea>
+      <menu>
+        <button id="save-btn" type="button">Save</button>
+        <button id="close-btn" type="button">Close</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
