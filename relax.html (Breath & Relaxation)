@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Breath & relaxation exercises for mindfulness and calm.">
+
+  <title>Inner Reflections – Breath & Relaxation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Inner Reflections</h1>
+    <p><em>Breath & Relaxation</em></p>
+  </header>
+
+  <nav class="main-menu">
+    <a href="index.html">Home</a>
+    <a href="journal.html">Daily Journal</a>
+    <a href="prompts.html">Guided Prompts</a>
+    <a href="inspiration.html">Tips & Inspiration</a>
+    <a href="relax.html">Breath & Relaxation</a>
+    <a href="game.html">Calm Mini‑Game</a>
+    <a href="entries.html">My Entries</a>
+  </nav>
+
+  <main>
+    <section aria-labelledby="relax-heading">
+      <h2 id="relax-heading">Breath & Relaxation</h2>
+      <p>Take a moment to focus on your breathing. Try this exercise:</p>
+      <ol>
+        <li>Inhale slowly for 4 counts.</li>
+        <li>Hold your breath for 4 counts.</li>
+        <li>Exhale slowly for 6 counts.</li>
+        <li>Repeat 3–5 times.</li>
+      </ol>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
