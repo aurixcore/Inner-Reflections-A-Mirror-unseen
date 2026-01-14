@@ -1,133 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Daily Journal for Inner Reflections — a private space to reflect and write.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily Journal – Inner Reflections</title>
 
-  <title>Inner Reflections – Daily Journal</title>
-  <<style>
-/* Body & fonts */
-body {
-  font-family: 'Bellota', serif;
-  background: linear-gradient(135deg, #1A1F3D, #5F4B8B);
-  color: #F6F3EE;
-  margin: 0;
-  padding: 0;
-  line-height: 1.7;
-}
+  <style>
+    body {
+      font-family: 'Bellota', serif;
+      background: linear-gradient(135deg, #1A1F3D, #5F4B8B);
+      color: #F6F3EE;
+      margin: 0;
+      padding: 0;
+    }
 
-/* Headers */
-h1, h2, h3 {
-  font-family: 'Cormorant Garamond', serif;
-  text-align: center;
-}
+    h1, h2 {
+      font-family: 'Cormorant Garamond', serif;
+      text-align: center;
+    }
 
-/* Navigation menu */
-.main-menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px;
-  background: #1A1F3D;
-}
+    .main-menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      background: #1A1F3D;
+    }
 
-.main-menu a {
-  padding: 8px 14px;
-  background: #5F4B8B;
-  color: #F6F3EE;
-  text-decoration: none;
-  border-radius: 6px;
-  font-family: 'Cormorant Garamond', serif;
-}
+    .main-menu a {
+      padding: 8px 14px;
+      background: #5F4B8B;
+      color: #F6F3EE;
+      text-decoration: none;
+      border-radius: 6px;
+    }
 
-.main-menu a:hover {
-  background: #A6C8FF;
-}
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
 
-/* Buttons */
-button {
-  background: #6b705c;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
+    textarea {
+      width: 100%;
+      height: 300px;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-family: 'Bellota', serif;
+      font-size: 16px;
+      background: #fef8d8;
+      color: #222;
+    }
 
-button:focus {
-  outline: 3px solid #f0e68c;
-}
+    button {
+      margin-top: 12px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #6b705c;
+      color: #fff;
+      cursor: pointer;
+    }
 
-/* Textarea */
-textarea {
-  width: 100%;
-  font-family: 'Bellota', serif;
-  padding: 0.6rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background: #fef8d8;
-  color: #222;
-}
-
-/* Dialog */
-dialog {
-  max-width: 40rem;
-  width: 90%;
-  padding: 1rem;
-  border-radius: 8px;
-  background: #2c2a4a;
-  color: #f6f3ee;
-}
-</style>
+    .date {
+      text-align: center;
+      opacity: 0.8;
+    }
+  </style>
 </head>
-<body>
-  <script src="script.js" defer></script>
-  <header>
-    <h1>Inner Reflections</h1>
-    <p><em>Daily Journal</em></p>
-  </header>
 
+<body>
   <nav class="main-menu">
     <a href="index.html">Home</a>
     <a href="journal.html">Daily Journal</a>
-    <a href="prompts.html">Guided Prompts</a>
-    <a href="inspiration.html">Tips & Inspiration</a>
-    <a href="relax.html">Breath & Relaxation</a>
-    <a href="game.html">Calm Mini‑Game</a>
     <a href="entries.html">My Entries</a>
   </nav>
 
   <main>
-    <section aria-labelledby="journal-heading">
-      <h2 id="journal-heading">Your Daily Entry</h2>
-      <p>
-        This is your private space to write, reflect, and explore your emotions.
-        Click below to open your journal and begin writing.
-      </p>
-      <button
-        id="open-reflection"
-        type="button"
-        aria-haspopup="dialog"
-        aria-controls="reflection-dialog"
-        aria-label="Open Reflection Dialog">
-        Open Reflection
-      </button>
-    </section>
+    <h1>Daily Journal</h1>
+    <p class="date" id="today-date"></p>
+
+    <textarea id="journal-text" placeholder="Write freely. This space is only for you."></textarea>
+
+    <button id="save-entry">Save Entry</button>
   </main>
 
-  <dialog id="reflection-dialog" aria-label="Reflection dialog">
-    <form method="dialog">
-      <h3>Take a deep breath</h3>
-      <textarea id="reflection-text" rows="10" placeholder="Write without judgment..."></textarea>
-      <menu>
-        <button id="save-btn" type="button">Save</button>
-        <button id="close-btn" type="button">Close</button>
-      </menu>
-    </form>
-  </dialog>
-
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
