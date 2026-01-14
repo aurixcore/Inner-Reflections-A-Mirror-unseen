@@ -1,112 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="View past journal entries in Inner Reflections app.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Entries – Inner Reflections</title>
 
-  <title>Inner Reflections – My Entries</title>
- <style>
-/* Body & fonts */
-body {
-  font-family: 'Bellota', serif;
-  background: linear-gradient(135deg, #1A1F3D, #5F4B8B);
-  color: #F6F3EE;
-  margin: 0;
-  padding: 0;
-  line-height: 1.7;
-}
+  <style>
+    body {
+      font-family: 'Bellota', serif;
+      background: linear-gradient(135deg, #1A1F3D, #5F4B8B);
+      color: #F6F3EE;
+      margin: 0;
+    }
 
-/* Headers */
-h1, h2, h3 {
-  font-family: 'Cormorant Garamond', serif;
-  text-align: center;
-}
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      text-align: center;
+    }
 
-/* Navigation menu */
-.main-menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px;
-  background: #1A1F3D;
-}
+    .main-menu {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      background: #1A1F3D;
+    }
 
-.main-menu a {
-  padding: 8px 14px;
-  background: #5F4B8B;
-  color: #F6F3EE;
-  text-decoration: none;
-  border-radius: 6px;
-  font-family: 'Cormorant Garamond', serif;
-}
+    .main-menu a {
+      padding: 8px 14px;
+      background: #5F4B8B;
+      color: #F6F3EE;
+      text-decoration: none;
+      border-radius: 6px;
+    }
 
-.main-menu a:hover {
-  background: #A6C8FF;
-}
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
 
-/* Buttons */
-button {
-  background: #6b705c;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
+    .entry {
+      background: rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
 
-button:focus {
-  outline: 3px solid #f0e68c;
-}
-
-/* Textarea */
-textarea {
-  width: 100%;
-  font-family: 'Bellota', serif;
-  padding: 0.6rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background: #fef8d8;
-  color: #222;
-}
-
-/* Dialog */
-dialog {
-  max-width: 40rem;
-  width: 90%;
-  padding: 1rem;
-  border-radius: 8px;
-  background: #2c2a4a;
-  color: #f6f3ee;
-}
-</style>
+    .entry-date {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 8px;
+    }
+  </style>
 </head>
-<body>
-  <script src="script.js" defer></script>
-  <header>
-    <h1>Inner Reflections</h1>
-    <p><em>My Entries</em></p>
-  </header>
 
+<body>
   <nav class="main-menu">
     <a href="index.html">Home</a>
     <a href="journal.html">Daily Journal</a>
-    <a href="prompts.html">Guided Prompts</a>
-    <a href="inspiration.html">Tips & Inspiration</a>
-    <a href="relax.html">Breath & Relaxation</a>
-    <a href="game.html">Calm Mini‑Game</a>
     <a href="entries.html">My Entries</a>
   </nav>
 
   <main>
-    <section aria-labelledby="entries-heading">
-      <h2 id="entries-heading">Saved Entries</h2>
-      <p>All your saved reflections will appear here. Currently saved in your browser's localStorage.</p>
-      <p>Future updates: export entries, search, and organize by date.</p>
-    </section>
+    <h1>My Entries</h1>
+    <div id="entries-container"></div>
   </main>
 
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
