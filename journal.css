@@ -1,0 +1,68 @@
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Georgia', serif; background:#f4f1ec; color:#2e2e2e; min-height:100vh; }
+
+/* HEADER */
+.app-header { padding:20px; }
+.app-header h1 { font-size:22px; font-weight:normal; }
+.app-header p { font-size:14px; opacity:0.7; }
+
+/* JOURNAL WRAPPER */
+.journal-wrapper { display:flex; justify-content:center; align-items:center; padding:20px; position:relative; }
+
+/* BOOK – COMMON */
+.journal-book { position:relative; transition:all 0.8s ease; cursor:pointer; }
+.hidden { display:none; }
+
+/* CLOSED BOOK */
+.journal-book.closed {
+  width:260px; height:360px;
+  background: linear-gradient(135deg, #d9cbb6 0%, #c4b494 100%);
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  background-image: url('images/leaf_pattern.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.journal-book.closed::after {
+  content:'';
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  background:linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  border-radius:12px;
+}
+.book-cover { display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; height:100%; }
+.book-cover h2 { font-size:20px; }
+.book-cover span { font-size:13px; opacity:0.7; }
+.hint { position:absolute; bottom:10px; width:100%; text-align:center; font-size:12px; opacity:0.6; }
+
+/* OPEN BOOK */
+.journal-book.open { display:flex; gap:4px; }
+.page { width:180px; height:300px; background:#faf8f3; border-radius:4px; box-shadow: inset 0 0 10px rgba(0,0,0,0.05), 0 4px 20px rgba(0,0,0,0.2); position:relative; transform-origin:left center; transition: transform 0.6s ease; }
+.left-page { transform: perspective(800px) rotateY(4deg); }
+.right-page { transform: perspective(800px) rotateY(-4deg); transform-origin:right center; }
+
+/* PAGE HEADER */
+.page-header { padding:10px; font-size:12px; border-bottom:1px solid rgba(0,0,0,0.1); }
+
+/* LINED PAGE */
+.lined { padding:12px; background-image: repeating-linear-gradient(to bottom, transparent, transparent 22px, rgba(0,0,0,0.08) 23px); }
+#startPrompt { font-size:14px; opacity:0.5; cursor:pointer; }
+textarea { width:100%; height:100%; border:none; resize:none; background:transparent; font-family:'Georgia', serif; font-size:14px; line-height:23px; outline:none; position:absolute; opacity:0; pointer-events:none; }
+
+/* PAGE NAVIGATION */
+.page-navigation { position:absolute; bottom:-40px; width:100%; display:flex; justify-content:space-between; }
+.page-navigation button { background:none; border:none; font-size:18px; cursor:pointer; opacity:0.6; }
+.page-navigation button:hover { opacity:1; }
+
+/* PRIVATE PAGE */
+.page.private { filter: blur(2px) brightness(0.9); }
+.page.private::after { content:'🔒'; position:absolute; top:10px; right:10px; }
+
+/* PAGE FLIP */
+.page.turn-next { transform: rotateY(-180deg); z-index:1; }
+.page.turn-prev { transform: rotateY(0deg); z-index:2; }
+
+/* FADE-IN PER LINE */
+.lined div { opacity:0; transform:translateY(2px); animation: fadeLine 0.4s forwards; animation-delay: calc(var(--line-index) * 0.05s); }
+@keyframes fadeLine { to { opacity:1; transform:translateY(0); } }
