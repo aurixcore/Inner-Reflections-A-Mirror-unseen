@@ -1,211 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A short calm mini-game for focus and relaxation.">
-
-  <title>Inner Reflections – Calm Mini-Game</title>
-  <style>
-/* Body & fonts */
-body {
-  font-family: 'Bellota', serif;
-  background: linear-gradient(135deg, #1A1F3D, #5F4B8B);
-  color: #F6F3EE;
-  margin: 0;
-  padding: 0;
-  line-height: 1.7;
-}
-
-/* Headers */
-h1, h2, h3 {
-  font-family: 'Cormorant Garamond', serif;
-  text-align: center;
-}
-
-/* Navigation menu */
-.main-menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px;
-  background: #1A1F3D;
-}
-
-.main-menu a {
-  padding: 8px 14px;
-  background: #5F4B8B;
-  color: #F6F3EE;
-  text-decoration: none;
-  border-radius: 6px;
-  font-family: 'Cormorant Garamond', serif;
-}
-
-.main-menu a:hover {
-  background: #A6C8FF;
-}
-
-/* Buttons */
-button {
-  background: #6b705c;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:focus {
-  outline: 3px solid #f0e68c;
-}
-
-/* Textarea */
-textarea {
-  width: 100%;
-  font-family: 'Bellota', serif;
-  padding: 0.6rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background: #fef8d8;
-  color: #222;
-}
-
-/* Dialog */
-dialog {
-  max-width: 40rem;
-  width: 90%;
-  padding: 1rem;
-  border-radius: 8px;
-  background: #2c2a4a;
-  color: #f6f3ee;
-}
-</style>
-  <style>
-    /* Mini-game canvas style */
-    #star-canvas {
-      display: block;
-      margin: 0 auto;
-      background: linear-gradient(to bottom, #1A1F3D, #5F4B8B);
-      border-radius: 12px;
-      max-width: 90%;
-      height: 400px;
-    }
-    #game-message {
-      text-align: center;
-      color: #F6F3EE;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      margin-top: 20px;
-    }
-    #instructions {
-      text-align: center;
-      color: #F6F3EE;
-      margin-top: 10px;
-      font-family: 'Bellota', serif;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inner Reflections – Mindfulness Space</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
-  <script src="script.js" defer></script>
-  <header>
-    <h1>Inner Reflections</h1>
-    <p><em>Calm Mini-Game</em></p>
-  </header>
 
-  <nav class="main-menu">
-    <a href="index.html">Home</a>
-    <a href="journal.html">Daily Journal</a>
-    <a href="prompts.html">Guided Prompts</a>
-    <a href="inspiration.html">Tips & Inspiration</a>
-    <a href="relax.html">Breath & Relaxation</a>
-    <a href="game.html">Calm Mini‑Game</a>
-    <a href="entries.html">My Entries</a>
-  </nav>
+<header>
+  <h1>Hi, <span id="userName">...</span></h1>
+  <p>Welcome back to Inner Reflections</p>
+</header>
 
-  <main>
-    <section aria-labelledby="game-heading">
-      <h2 id="game-heading">Connect the Stars</h2>
-      <p id="instructions">Click on the stars to reveal a calm message.</p>
-      <canvas id="star-canvas"></canvas>
-      <p id="game-message"></p>
-    </section>
-  </main>
+<nav class="main-menu">
+  <a href="index.html">Home</a>
+  <a href="journal.html">Daily Journal</a>
+  <a href="Guide.html">Guided Prompts</a>
+  <a href="inspiration.html">Tips & Inspiration</a>
+  <a href="relax.html">Breath & Relaxation</a>
+  <a href="game.html">Mindfulness Space</a>
+  <a href="entries.html">My Entries</a>
+</nav>
 
-  <script>
-    const canvas = document.getElementById('star-canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = canvas.offsetWidth;
-    canvas.height = 400;
+<main>
+  <h2>Mindfulness Space</h2>
+  <p>Short mini-games and exercises to reset your focus.</p>
+</main>
 
-    const stars = [];
-    const starCount = 30;
-    const messages = [
-      "Breathe deeply…",
-      "You are calm and safe.",
-      "Notice your inner peace.",
-      "Every star is a gentle thought.",
-      "Let go and relax.",
-      "Observe your feelings with kindness.",
-      "A quiet mind is a happy mind."
-    ];
-
-    // Create stars
-    for(let i=0; i<starCount; i++){
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 3 + 2,
-        clicked: false
-      });
-    }
-
-    // Draw stars
-    function drawStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      stars.forEach(star => {
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI*2);
-        ctx.fillStyle = star.clicked ? '#A6C8FF' : '#F6F3EE';
-        ctx.fill();
-      });
-    }
-
-    drawStars();
-
-    // Click event
-    canvas.addEventListener('click', function(e){
-      const rect = canvas.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-      const clickY = e.clientY - rect.top;
-
-      stars.forEach(star => {
-        const dx = clickX - star.x;
-        const dy = clickY - star.y;
-        if(!star.clicked && Math.sqrt(dx*dx + dy*dy) < star.radius + 5){
-          star.clicked = true;
-          // Show calm message
-          const message = messages[Math.floor(Math.random() * messages.length)];
-          document.getElementById('game-message').innerText = message;
-        }
-      });
-
-      drawStars();
-    });
-
-    // Optional: animate stars slightly
-    function animateStars() {
-      stars.forEach(star => {
-        star.y += 0.1;
-        if(star.y > canvas.height) star.y = 0;
-      });
-      drawStars();
-      requestAnimationFrame(animateStars);
-    }
-
-    animateStars();
-  </script>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
