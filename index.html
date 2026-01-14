@@ -3,220 +3,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A private digital journal for deep self-reflection and emotional awareness. Inner Reflections invites you to explore your inner world through gentle prompts and guided moments of stillness. This is a safe space to observe your emotions, recognize patterns, and reconnect with yourself—quietly, honestly, and without judgment.">
   <title>Inner Reflections – A Mirror Unseen</title>
 
-  <!-- Styles -->
-  <style>
-    /* Body & fonts */
-    body {
-      font-family: 'Bellota', serif;
-      background: linear-gradient(135deg, #1A1F3D, #5F4B8B);
-      color: #F6F3EE;
-      margin: 0;
-      padding: 0;
-      line-height: 1.7;
-    }
+  <meta name="description" content="A private digital journal for deep self-reflection and emotional awareness.">
 
-    /* Headers */
-    h1, h2, h3 {
-      font-family: 'Cormorant Garamond', serif;
-      text-align: center;
-      margin: 0.8rem 0;
-    }
-
-    /* Navigation menu */
-    .main-menu {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 20px;
-      background: #1A1F3D;
-    }
-
-    .main-menu a {
-      padding: 8px 14px;
-      background: #5F4B8B;
-      color: #F6F3EE;
-      text-decoration: none;
-      border-radius: 6px;
-      font-family: 'Cormorant Garamond', serif;
-      transition: all 0.3s ease;
-    }
-
-    .main-menu a:hover {
-      background: #A6C8FF;
-      color: #1A1F3D;
-    }
-
-    /* Buttons */
-    button {
-      background: #6b705c;
-      color: #fff;
-      border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-    }
-
-    button:focus {
-      outline: 3px solid #f0e68c;
-    }
-
-    /* Textarea */
-    textarea {
-      width: 100%;
-      font-family: 'Bellota', serif;
-      padding: 0.6rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      background: #fef8d8;
-      color: #222;
-      resize: vertical;
-    }
-
-    /* Dialog */
-    dialog {
-      max-width: 40rem;
-      width: 90%;
-      padding: 1rem;
-      border-radius: 8px;
-      background: #2c2a4a;
-      color: #f6f3ee;
-    }
-
-    /* Sections */
-    section {
-      padding: 1.5rem 2rem;
-    }
-
-    /* Home Buttons */
-    .home-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 1rem;
-    }
-
-    .home-buttons button {
-      flex: 1 1 150px;
-    }
-
-    /* Daily Tip */
-    .daily-tip {
-      text-align: center;
-      background: rgba(255,255,255,0.1);
-      padding: 1rem;
-      border-radius: 8px;
-      margin: 1rem 0;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <script src="script.js" defer></script>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Inner Reflections</h1>
-    <p><em>A Mirror Unseen</em></p>
-  </header>
+<header>
+  <h1>Inner Reflections</h1>
+  <p><em>A Mirror Unseen</em></p>
+</header>
 
-  <!-- NAVIGATION MENU -->
-  <nav class="main-menu">
-    <a href="index.html">Home</a>
-    <a href="journal.html">Daily Journal</a>
-    <a href="prompts.html">Guided Prompts</a>
-    <a href="inspiration.html">Tips & Inspiration</a>
-    <a href="relax.html">Breath & Relaxation</a>
-    <a href="game.html">Mindfulness Space</a>
-    <a href="entries.html">My Entries</a>
-  </nav>
+<nav class="main-menu">
+  <a href="index.html">Home</a>
+  <a href="journal.html">Daily Journal</a>
+  <a href="prompts.html">Guided Prompts</a>
+  <a href="inspiration.html">Tips & Inspiration</a>
+  <a href="relax.html">Breath & Relaxation</a>
+  <a href="game.html">Mindfulness Space</a>
+  <a href="entries.html">My Entries</a>
+</nav>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <!-- Introduction Section -->
-    <section aria-labelledby="intro-heading">
-      <h2 id="intro-heading">Welcome to Inner Reflections</h2>
-      <p>
-        Explore your inner world through daily reflection, gentle Messages, and mindful exercises. 
-        Use this space to observe your emotions, recognize patterns, and reconnect with yourself quietly, honestly, and without judgment.
-      </p>
-    </section>
+<main>
+  <section class="home-intro">
+    <h2>Welcome🌌</h2>
+    <p>
+      A quiet space to observe your emotions, write without judgment,
+      and reconnect with yourself.
+    </p>
+  </section>
 
-    <section class="home-intro">
-      <h2>Welcome to Inner Reflections 🌌</h2>
-      <p>Your space to explore, express, and evolve.</p>
-    </section>
+  <section class="daily-tip">
+    <h3>Today’s Reflection</h3>
+    <p id="daily-tip"></p>
+  </section>
 
-    <!-- Daily Journal Section -->
-    <section aria-labelledby="journal-heading">
-      <h2 id="journal-heading">Daily Journal</h2>
-      <p>
-        Your private space to write, reflect, and explore your emotions. Click below to begin your daily entry.
-      </p>
-      <button
-        id="open-reflection"
-        type="button"
-        aria-haspopup="dialog"
-        aria-controls="reflection-dialog"
-        aria-label="Open Reflection Dialog">
-        Open Reflection
-      </button>
+  <section class="home-buttons">
+    <button onclick="location.href='journal.html'">+ New Journal Entry</button>
+  </section>
+</main>
 
-      <!-- Daily Tip -->
-      <section class="daily-tip">
-        <h3>Today's Tip</h3>
-        <p id="daily-tip">"Take a moment to breathe and reflect on what matters most today."</p>
-      </section>
-    </section>
-
-    <!-- Coming Soon / Placeholders -->
-    <section aria-labelledby="placeholders-heading">
-      <h2 id="placeholders-heading">Coming Soon</h2>
-      <ul>
-        <li>Guided Prompts — exercises for self-awareness</li>
-        <li>Tips & Inspiration — daily quotes and insights</li>
-        <li>Breath & Relaxation — short exercises to calm the mind</li>
-        <li>Mindfulness Space — a short interactive activity</li>
-        <li>My Entries — review your past reflections</li>
-      </ul>
-    </section>
-
-    <!-- Quick Access Buttons -->
-    <section class="home-buttons">
-      <button onclick="location.href='journal.html'">+ New Journal</button>
-      <button onclick="location.href='prompts.html'">Guided Messages</button>
-      <button onclick="location.href='inspiration.html'">Inspiration & Tips</button>
-      <button onclick="location.href='relax.html'">Breath & Relaxation</button>
-      <button onclick="location.href='game.html'">Mindfulness Space</button>
-      <button onclick="location.href='entries.html'">My Entries</button>
-    </section>
-  </main>
-
-  <!-- JOURNAL DIALOG -->
-  <dialog id="reflection-dialog" aria-label="Reflection dialog">
-    <form method="dialog">
-      <h3>Take a deep breath</h3>
-      <textarea
-        id="reflection-text"
-        rows="10"
-        placeholder="Write without judgment..."></textarea>
-      <menu>
-        <button id="save-btn" type="button">Save</button>
-        <button id="close-btn" type="button">Close</button>
-      </menu>
-    </form>
-  </dialog>
-
-  <!-- SCRIPT -->
-  <script src="script.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>
