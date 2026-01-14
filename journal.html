@@ -1,36 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Daily Journal – Inner Reflections</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inner Reflections – Journal</title>
+  <link rel="stylesheet" href="journal.css" />
 </head>
-
 <body>
 
-<header>
-  <h1>Daily Journal</h1>
+<!-- HEADER -->
+<header class="app-header">
+  <h1>Hi, <span id="userName">...</span></h1>
+  <p>Welcome back to Inner Reflections</p>
 </header>
 
-<nav class="main-menu">
-  <a href="index.html">Home</a>
-  <a href="journal.html">Daily Journal</a>
-  <a href="prompts.html">Guided Prompts</a>
-  <a href="inspiration.html">Tips & Inspiration</a>
-  <a href="relax.html">Breath & Relaxation</a>
-  <a href="game.html">Mindfulness Space</a>
-  <a href="entries.html">My Entries</a>
-</nav>
+<!-- JOURNAL CONTAINER -->
+<main class="journal-wrapper">
 
-<main>
-  <textarea
-    id="journal-text"
-    rows="14"
-    placeholder="Write freely. This space is safe."></textarea>
+  <!-- CLOSED BOOK -->
+  <section id="closedBook" class="journal-book closed">
+    <div class="book-cover">
+      <h2>My Journal</h2>
+      <span>Inner Reflections</span>
+    </div>
+    <p class="hint">Tap to open</p>
+  </section>
 
-  <button id="save-entry">Save Entry</button>
+  <!-- OPEN BOOK -->
+  <section id="openBook" class="journal-book open hidden">
+
+    <!-- LEFT PAGE -->
+    <div class="page left-page">
+      <div class="page-content" id="leftPageContent">
+        <!-- Previous day content -->
+      </div>
+    </div>
+
+    <!-- RIGHT PAGE -->
+    <div class="page right-page">
+      <div class="page-header">
+        <span id="journalDate"></span>
+      </div>
+      <div class="page-content lined" id="rightPageContent">
+        <div id="startPrompt">Start journaling</div>
+        <textarea id="journalInput" class="hidden"></textarea>
+      </div>
+    </div>
+
+    <!-- PAGE NAVIGATION -->
+    <div class="page-navigation">
+      <button id="prevDay">◀</button>
+      <button id="nextDay">▶</button>
+    </div>
+
+  </section>
 </main>
 
-<script src="script.js" defer></script>
+<script src="journal.js"></script>
 </body>
 </html>
