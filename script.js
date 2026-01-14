@@ -1,100 +1,100 @@
 // ----------------------------
-// INNER REFLECTIONS SCRIPT.JS
+// INNER REFLECTIONS - script.js
 // ----------------------------
 
 // ----------------------------
-// JOURNAL FUNCTIONALITY
+// ELEMENT REFERENCES
 // ----------------------------
-const openBtn = document.getElementById('open-reflection');
-const dialog = document.getElementById('reflection-dialog');
-const closeBtn = document.getElementById('close-btn');
-const saveBtn = document.getElementById('save-btn');
-const textarea = document.getElementById('reflection-text');
-const STORAGE_KEY = 'inner-reflections:latest-entry';
+const openBtn = document.getElementById("open-reflection");
+const dialog = document.getElementById("reflection-dialog");
+const closeBtn = document.getElementById("close-btn");
+const saveBtn = document.getElementById("save-btn");
+const textarea = document.getElementById("reflection-text");
+const dailyTipEl = document.getElementById("daily-tip");
 
-// Load saved journal entry
-if (textarea) {
-  textarea.value = localStorage.getItem(STORAGE_KEY) || '';
-}
+// ----------------------------
+// STORAGE KEYS
+// ----------------------------
+const JOURNAL_KEY = "inner-reflections:journal";
+const DATE_KEY = "inner-reflections:last-date";
 
-// Open journal dialog
+// ----------------------------
+// OPEN JOURNAL DIALOG
+// ----------------------------
 if (openBtn && dialog) {
-  openBtn.addEventListener('click', () => {
-    if (typeof dialog.showModal === 'function') {
+  openBtn.addEventListener("click", () => {
+    if (typeof dialog.showModal === "function") {
       dialog.showModal();
-      textarea.focus();
+      textarea?.focus();
     }
   });
 }
 
-// Close journal dialog
-if (closeBtn) {
-  closeBtn.addEventListener('click', () => {
-    if (dialog) dialog.close();
+// ----------------------------
+// CLOSE DIALOG
+// ----------------------------
+if (closeBtn && dialog) {
+  closeBtn.addEventListener("click", () => {
+    dialog.close();
   });
 }
 
-// Save journal entry
-if (saveBtn) {
-  saveBtn.addEventListener('click', () => {
-    if (textarea) localStorage.setItem(STORAGE_KEY, textarea.value);
-    if (dialog) dialog.close();
+// ----------------------------
+// SAVE JOURNAL ENTRY
+// ----------------------------
+if (saveBtn && textarea && dialog) {
+  saveBtn.addEventListener("click", () => {
+    localStorage.setItem(JOURNAL_KEY, textarea.value);
+    localStorage.setItem(DATE_KEY, new Date().toDateString());
+    dialog.close();
   });
 }
 
-// Autosave while typing
+// ----------------------------
+// AUTOLOAD SAVED ENTRY
+// ----------------------------
 if (textarea) {
-  textarea.addEventListener('input', () => {
-    localStorage.setItem(STORAGE_KEY, textarea.value);
+  const savedText = localStorage.getItem(JOURNAL_KEY);
+  if (savedText) {
+    textarea.value = savedText;
+  }
+
+  // Autosave while typing
+  textarea.addEventListener("input", () => {
+    localStorage.setItem(JOURNAL_KEY, textarea.value);
   });
 }
 
 // ----------------------------
-// MENU ACTIVE PAGE HIGHLIGHT
+// DAILY ROTATING TIP ENGINE
 // ----------------------------
-const currentPage = window.location.pathname.split("/").pop();
+const dailyTips = [
+  "Take a moment to breathe and notice how your body feels.",
+  "You do not need to solve everything today.",
+  "What emotion is asking to be seen right now?",
+  "Rest is also productive.",
+  "Notice one thing you are grateful for in this moment.",
+  "Your feelings are information, not instructions.",
+  "Slow down. Presence is enough.",
+  "What would kindness toward yourself look like today?",
+  "You are allowed to take up space.",
+  "Small steps still move you forward."
+];
+
+if (dailyTipEl) {
+  const today = new Date();
+  const index = today.getDate() % dailyTips.length;
+  dailyTipEl.textContent = `"${dailyTips[index]}"`;
+}
+
+// ----------------------------
+// HIGHLIGHT ACTIVE MENU ITEM
+// ----------------------------
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
 document.querySelectorAll(".main-menu a").forEach(link => {
   if (link.getAttribute("href") === currentPage) {
     link.style.backgroundColor = "#A6C8FF";
     link.style.color = "#1A1F3D";
   }
 });
-
-// ----------------------------
-// MINI-GAME FUNCTIONALITY
-// Only run on game.html
-// ----------------------------
-if (currentPage === "game.html") {
-  const canvas = document.getElementById('star-canvas');
-  const ctx = canvas.getContext('2d');
-  canvas.width = canvas.offsetWidth;
-  canvas.height = 400;
-
-  const stars = [];
-  const starCount = 30;
-  const messages = [
-    "Breathe deeply…",
-    "You are calm and safe.",
-    "Notice your inner peace.",
-    "Every star is a gentle thought.",
-    "Let go and relax.",
-    "Observe your feelings with kindness.",
-    "A quiet mind is a happy mind."
-  ];
-
-  // Create stars
-  for (let i = 0; i < starCount; i++) {
-    stars.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 3 + 2,
-      clicked: false
-    });
-  }
-
-  // Draw stars
-  function drawStars() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    stars.forEach(star => {
-      ctx.beginPath();
-      ctx.arc(star
