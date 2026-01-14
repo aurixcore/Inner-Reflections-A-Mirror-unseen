@@ -1,0 +1,168 @@
+<!-- JOURNAL PAGE – REALISTIC OPEN BOOK LAYOUT
+Doel: ECHT boekgevoel met openklap animatie, 3D perspectief, bladzijde-omslag
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inner Reflections – Journal</title>
+<link rel="stylesheet" href="journal.css">
+<style>
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #f4f1ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app-header {
+  text-align: center;
+  padding: 20px;
+}
+
+.journal-container {
+  perspective: 1200px;
+  margin-top: 20px;
+  position: relative;
+  width: 500px;
+  height: 350px;
+}
+
+/* Gesloten boek */
+.book-closed {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #cbbfa9, #b8aa8f);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.6s;
+  position: absolute;
+}
+
+.book-closed h2, .book-closed span {
+  text-align: center;
+}
+
+/* Open boek wrapper */
+.book-open {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+}
+
+.page {
+  width: 50%;
+  height: 100%;
+  background: #faf8f3;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.05), 0 8px 20px rgba(0,0,0,0.2);
+  transform-origin: left center;
+  transition: transform 0.8s ease;
+  position: relative;
+  padding: 15px;
+}
+
+.page.right {
+  transform-origin: right center;
+}
+
+.page-header {
+  font-size: 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+}
+
+.lined {
+  background-image: repeating-linear-gradient(to bottom, transparent, transparent 22px, rgba(0,0,0,0.08) 23px);
+  height: calc(100% - 30px);
+  padding: 10px;
+  overflow-y: auto;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  resize: none;
+  background: transparent;
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  line-height: 23px;
+  outline: none;
+}
+
+.page-navigation {
+  position: absolute;
+  bottom: -40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-navigation button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.page-navigation button:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <h1>Hi, <span id="userName">...</span></h1>
+  <p>Welcome back to Inner Reflections</p>
+</header>
+
+<div class="journal-container">
+  <!-- Gesloten boek -->
+  <div id="closedBook" class="book-closed">
+    <div>
+      <h2>My Journal</h2>
+      <span>Inner Reflections</span>
+      <p>Tap to open</p>
+    </div>
+  </div>
+
+  <!-- Open boek -->
+  <div id="openBook" class="book-open hidden">
+    <div class="page left">
+      <div class="page-header" id="leftPageDate">Previous</div>
+      <div class="lined" id="leftPageContent"></div>
+    </div>
+    <div class="page right">
+      <div class="page-header" id="rightPageDate"></div>
+      <div class="lined">
+        <div id="startPrompt">Start journaling</div>
+        <textarea id="journalInput" class="hidden"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigatie -->
+  <div class="page-navigation">
+    <button id="prevDay">◀</button>
+    <button id="nextDay">▶</button>
+  </div>
+</div>
+
+<script src="journal.js"></script>
+</body>
+</html>
