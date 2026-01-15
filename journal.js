@@ -66,3 +66,27 @@ document.getElementById('nextDay').addEventListener('click',()=>{
         setTimeout(()=>rightPage.classList.remove('turn-next'),600);
     }
 });
+/* =========================
+   START JOURNAL FIX
+   ========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const startBtn = document.getElementById("startJournalBtn");
+  const editor = document.getElementById("journalEditor");
+  const closeBtn = document.getElementById("closeJournal");
+
+  if (!startBtn || !editor) {
+    console.error("Start Journal elements not found");
+    return;
+  }
+
+  startBtn.addEventListener("click", () => {
+    editor.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    editor.classList.add("hidden");
+    document.body.style.overflow = "";
+  });
+});
